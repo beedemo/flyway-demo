@@ -1,0 +1,1 @@
+ALTER TABLE test_emp add column updated_date date;

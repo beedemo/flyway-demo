@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+
+  init-db:
+    image: maven:3.3.9-jdk-8-alpine
+    volumes:
+      - .:/usr/src
+    working_dir: /usr/src
+    command: mvn -Dflyway.target=1.0 clean compile flyway:migrate
+    networks:
+      - flyway
+ 
+  update-db:
+    image: maven:3.3.9-jdk-8-alpine
+    volumes:
+      - .:/usr/src
+    working_dir: /usr/src
+    command: mvn -Dflyway.target=1.0 clean compile flyway:migrate
+    networks:
+      - flyway
+    
+networks:
+  default:
+    external:
+      name: flyway

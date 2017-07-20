@@ -1,4 +1,5 @@
 node('docker-compose') {
+  properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5']]])
   stage('start database') {
     checkout scm
     try { sh 'docker network rm flyway' } catch (Exception _) {}

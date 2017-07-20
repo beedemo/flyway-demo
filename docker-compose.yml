@@ -4,8 +4,6 @@ services:
 
   db:
     image: postgres:9.2-alpine
-    networks:
-      - flyway
     environment:
       - POSTGRES_PASSWORD=password
 
@@ -15,8 +13,8 @@ services:
       - .:/usr/src
     working_dir: /usr/src
     command: mvn -Dflyway.target=1.0 clean compile flyway:migrate
-    networks:
-      - flyway
+    links:
+      - db
  
   update-db:
     image: maven:3.3.9-jdk-8-alpine
@@ -24,10 +22,5 @@ services:
       - .:/usr/src
     working_dir: /usr/src
     command: mvn -Dflyway.target=1.1 clean compile flyway:migrate
-    networks:
-      - flyway
-    
-networks:
-  default:
-    external:
-      name: flyway
+    links:
+      - db

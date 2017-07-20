@@ -29,7 +29,7 @@
                 <version>4.2.0</version>
                 <!--Note this needs to passed in somehow - such as settings.xml, etc...-->
                 <configuration>
-                    <url>jdbc:postgresql://db:5432/flyway</url>
+                    <url>jdbc:postgresql://db:5432/postgres</url>
                     <user>postgres</user>
                     <password>password</password>
                     <driver>org.postgresql.Driver</driver>

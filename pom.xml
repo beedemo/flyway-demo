@@ -7,10 +7,7 @@
     <groupId>flyway-demo</groupId>
     <artifactId>flyway-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <build>
-             
-                     
+         
     <dependencies>
         <dependency>
             <groupId>postgresql</groupId>
@@ -18,7 +15,8 @@
             <version>9.2-1002-jdbc4</version>
         </dependency>
     </dependencies>
-
+         
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.flywaydb</groupId>

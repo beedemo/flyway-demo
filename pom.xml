@@ -12,7 +12,7 @@
 
         <plugins>
             <plugin>
-                <groupId>com.googlecode.flyway</groupId>
+                <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>4.2.0</version>
                 <!--Note this needs to passed in somehow - such as settings.xml, etc...-->

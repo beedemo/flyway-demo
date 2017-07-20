@@ -24,3 +24,13 @@ services:
     command: mvn -Dflyway.target=1.1 clean compile flyway:migrate
     links:
       - db
+      
+  alter-db:
+    image: maven:3.3.9-jdk-8-alpine
+    volumes:
+      - .:/usr/src
+    working_dir: /usr/src
+    command: mvn -Dflyway.target=1.2 clean compile flyway:migrate
+    links:
+      - db
+

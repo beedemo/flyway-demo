@@ -1,7 +1,7 @@
 node('docker-compose') {
   stage('start database') {
     checkout scm
-    //sh 'docker network create flyway'
+    sh 'docker network create flyway'
     sh 'docker-compose up -d db'
   }
   stage('flyway init') {

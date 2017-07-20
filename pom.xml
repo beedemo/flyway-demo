@@ -9,6 +9,15 @@
     <version>1.0-SNAPSHOT</version>
 
     <build>
+             
+                     
+    <dependencies>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.2-1002-jdbc4</version>
+        </dependency>
+    </dependencies>
 
         <plugins>
             <plugin>

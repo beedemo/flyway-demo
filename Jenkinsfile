@@ -1,6 +1,7 @@
 node('docker-compose') {
   stage('start database') {
     checkout scm
+    try { sh 'docker network rm flyway' } catch (Exception _) {}
     sh 'docker network create flyway'
     sh 'docker-compose up -d db'
   }

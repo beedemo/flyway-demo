@@ -29,20 +29,19 @@
                 <version>4.2.0</version>
                 <!--Note this needs to passed in somehow - such as settings.xml, etc...-->
                 <configuration>
-                    <url>jdbc:postgresql://db:5432</url>
+                    <url>jdbc:postgresql://db:5432/flyway</url>
                     <user>postgres</user>
                     <password>password</password>
                     <driver>org.postgresql.Driver</driver>
                     <locations>migrations</locations>
-                </configuration>
-                     
-    <dependencies>
-        <dependency>
-            <groupId>postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>9.1-901.jdbc4</version>
-        </dependency>
-    </dependencies>
+                </configuration> 
+                <dependencies>
+                  <dependency>
+                   <groupId>postgresql</groupId>
+                   <artifactId>postgresql</artifactId>
+                   <version>9.1-901.jdbc4</version>
+                </dependency>
+               </dependencies>
             </plugin>
 
         </plugins>

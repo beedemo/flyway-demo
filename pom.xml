@@ -34,10 +34,10 @@
 
                 <!--Note this needs to passed in somehow - such as settings.xml, etc...-->
                 <configuration>
-                    <url>${db.url}</url>
-                    <user>${db.user}</user>
-                    <password>${db.password}</password>
-                    <driver>${db.driver}</driver>
+                    <url>db:5432</url>
+                    <user>postgres</user>
+                    <password>password</password>
+                    <driver>org.postgresql.Driver</driver>
                     <locations>migrations</locations>
                 </configuration>
             </plugin>

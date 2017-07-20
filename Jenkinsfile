@@ -9,11 +9,11 @@ node('docker-compose') {
   stage('flyway init') {
     checkout scm
     sh 'docker-compose run --rm init-db'
-    sh """docker-compose exec -T db env PGPASSWORD=password psql -h db -U postgres public \\\\d+ test_emp"""
+    sh """docker-compose exec -T db env PGPASSWORD=password psql -v ON_ERROR_STOP=1 -P pager=off -h db -U postgres \\\\d+ test_emp"""
   }
   stage('flyway update') {
     sh 'docker-compose run --rm update-db'
-    sh """docker-compose exec -T db env PGPASSWORD=password psql -h db -U postgres public \\\\d+ test_emp"""
+    sh """docker-compose exec -T db env PGPASSWORD=password psql -v ON_ERROR_STOP=1 -P pager=off -h db -U postgres \\\\d+ test_emp"""
   }
   stage('clean-up') {
     sh 'docker-compose down'     

@@ -8,7 +8,7 @@ services:
       - POSTGRES_PASSWORD=password
 
   init-db:
-    image: maven:3.3.9-jdk-8-alpine
+    image: beedemo/flyway-demo-mvn-cache:latest
     volumes:
       - .:/usr/src
     working_dir: /usr/src
@@ -17,7 +17,7 @@ services:
       - db
  
   update-db:
-    image: maven:3.3.9-jdk-8-alpine
+    image: beedemo/flyway-demo-mvn-cache:latest
     volumes:
       - .:/usr/src
     working_dir: /usr/src
@@ -26,7 +26,7 @@ services:
       - db
       
   alter-db:
-    image: maven:3.3.9-jdk-8-alpine
+    image: beedemo/flyway-demo-mvn-cache:latest
     volumes:
       - .:/usr/src
     working_dir: /usr/src

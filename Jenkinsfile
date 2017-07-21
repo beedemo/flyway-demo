@@ -13,7 +13,7 @@ node('docker-compose') {
     sh 'docker-compose run --rm update-db'
     sh """docker-compose exec -T db env PGPASSWORD=password psql -h db -U postgres postgres -c \"\\\\d+ test_emp\""""
   }
-  stage('flyway alter columb') {
+  stage('flyway alter column') {
     sh 'docker-compose run --rm alter-db'
     sh """docker-compose exec -T db env PGPASSWORD=password psql -h db -U postgres postgres -c \"\\\\d+ test_emp\""""
   }
